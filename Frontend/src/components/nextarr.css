@@ -1,0 +1,8 @@
+.next{
+    background: black;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    height: fit-content;
+    cursor: pointer;
+}

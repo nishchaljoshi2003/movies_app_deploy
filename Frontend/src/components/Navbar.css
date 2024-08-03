@@ -1,0 +1,299 @@
+.navbar{
+    position: relative;
+    width: 100%;
+    display: flex;
+    filter: opacity(1);
+    padding: 0.1rem;
+    background-color: black;
+    z-index: 2;
+}
+.logo{
+    margin-left: 3rem;
+    margin-top: 0.5rem;
+    color: crimson;
+    margin-right: 0.4rem;
+    cursor: pointer;
+}
+.menu{
+    z-index: 2;
+    cursor: pointer;
+    margin-left: 1.5rem;
+    margin-top: 0.5%;
+    color: whitesmoke;
+}
+
+/* search bar begins*/
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:700');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+body {
+  background: #252525;
+}
+
+.container {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 300px;
+  max-height: 45px;
+}
+.search {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    background: crimson;
+    border-radius: 50%;
+    transition: all 1s;
+    z-index: 4;
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
+    /* box-shadow: 0 0 25px 0 crimson; */
+    &:hover {
+      cursor: pointer;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      margin: auto;
+      top: 8px;
+      right: 0;
+      bottom: 0;
+      left: 8px;
+      width: 9px;
+      height: 2px;
+      background: white;
+      transform: rotate(45deg);
+      transition: all .5s;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      margin: auto;
+      top: -5px;
+      right: 0;
+      bottom: 0;
+      left: -5px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: 2px solid white;
+      transition: all .5s;
+    }
+  }
+  .input1 {
+    font-family: 'Inconsolata', monospace;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    outline: none;
+    border: none;
+     /* border-bottom: 1px solid rgba(255, 255, 255, 0.2); */
+    background: crimson;
+    color: white;
+    text-shadow: 0 0 10px crimson;
+    padding: 0 80px 0 20px;
+    border-radius: 30px;
+    box-shadow: 0 0 25px 0 crimson,
+                0 20px 25px 0 rgba(0, 0, 0, 0.2);
+    /* box-shadow: inset 0 0 25px 0 rgba(0, 0, 0, 0.5); */
+    transition: all 1s;
+    opacity: 0;
+    z-index: 5;
+    font-weight: bolder;
+    letter-spacing: 0.1em;
+    &:hover {
+      cursor: pointer;
+    }
+    &:focus {
+      width: 300px;
+      opacity: 1;
+      cursor: text;
+    }
+    &:focus ~ .search {
+      right: -250px;
+      background: #151515;
+      z-index: 6;
+      &::before {
+        top: 0;
+        left: 0;
+        width: 25px;
+      }
+      &::after {
+        top: 0;
+        left: 0;
+        width: 25px;
+        height: 2px;
+        border: none;
+        background: white;
+        border-radius: 0%;
+        transform: rotate(-45deg);
+      }
+    }
+    &::placeholder {
+      color: white;
+      opacity: 0.5;
+      font-weight: bolder;
+    }
+  }
+.wrapper{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 30rem;
+}
+
+/* search  bar ends */
+.heading{
+    cursor: pointer;
+    margin-left: 0.2rem;
+    max-width: 50px;
+    max-height: 50px;
+}
+.head{
+    cursor: pointer;
+    margin-top: 1rem;
+}
+.favorites{
+    position: absolute;
+    margin-top: 0.3rem;
+    right: 7rem;
+    cursor: pointer;
+    color: whitesmoke;
+}
+.profile{
+    position: absolute;
+    margin-top: 0.3rem;
+    right: 2rem;
+    cursor: pointer;
+    color: whitesmoke;
+}
+.profile:hover{
+    scale: 1.1;
+    color: crimson;
+}
+.favorites:hover{
+    scale: 1.1;
+    color: rgb(255, 196, 0);
+}
+.menu:hover{
+    scale: 1.1;
+    color: crimson;
+}
+.logo:hover{
+    scale: 1.1;
+}
+/* dropdown menu begins here */
+.dropdown {
+    display: none;
+    color: whitesmoke;
+    position: absolute;
+    min-width: 10rem;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 4px;
+    z-index: 4;
+  }
+  
+  .menu:hover .dropdown {
+    position: absolute;
+    display: block;
+    z-index: 4;
+  }
+  
+  .dropdown-item {
+    position: relative;
+    padding: 0.5rem 1rem;
+    color: white;
+    cursor: pointer;
+    z-index: 4;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #555;
+    z-index: 4;
+  }
+  
+  .submenu {
+    display: none;
+    min-width: 10rem;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: #444;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 4px;
+    z-index: 4;
+  }
+  
+  .dropdown-item:hover .submenu {
+    display: block;
+    z-index: 2;
+  }
+  
+  .submenu li {
+    padding: 0.5rem 1rem;
+    color: white;
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+  .submenu li:hover {
+    background-color: #555;
+    z-index: 2;
+  }
+/* dropdown menu ends here */
+
+.heading{
+    color: whitesmoke;
+    margin-top: 0.1rem;
+}
+.head{
+    color: whitesmoke;
+    margin-top: 1.2rem;
+}
+
+@media screen and (max-width: 750px) {
+    .profile{
+        display: none;
+    }
+    .favorites{
+        display: none;
+    }
+    .wrapper{
+        right: 20rem;   
+    }
+}
+@media screen and (max-width: 578px){
+    .wrapper{
+        display: none;
+    }
+}
+
