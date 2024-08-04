@@ -15,17 +15,20 @@ const allowedOrigins = [
   'https://movies-app-api.vercel.app/'
 ];
 
-app.use(cors({
-    origin: (origin, callback) => {
+
+const corsOptions = {
+  origin: (origin, callback) => {
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'));
     }
   },
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
-    allowedHeaders: '*',
-  }));
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: '*'
+};
+
+app.use(cors(corsOptions));
 
 const pool = new Pool({
     user: process.env.DB_USER,
