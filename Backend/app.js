@@ -11,7 +11,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 app.use(cors({
-    origin: 'https://movies-app-gsx6d1xho-nishchaljoshi2003s-projects.vercel.app/',
+    origin: 'https://movies-app-api.vercel.app/',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
     allowedHeaders: '*',
   }));
