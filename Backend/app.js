@@ -40,7 +40,7 @@ function authenticateToken(req, res, next) {
 }
 
 app.get('/'(req,res)=>{
-    res.send("Hello, The server is working properly");
+    res.json("Hello, The server is working properly");
 });
 app.post('/api/register', async (req, res) => {
     const { email, password, age } = req.body;
