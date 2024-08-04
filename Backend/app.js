@@ -39,8 +39,8 @@ function authenticateToken(req, res, next) {
     });
 }
 
-app.get('/'(req,res)=>{
-    res.json({ message: 'Hello' });
+app.get('/', (req, res) => {
+  res.json({ message: 'Hello' });
 });
 app.post('/api/register', async (req, res) => {
     const { email, password, age } = req.body;
