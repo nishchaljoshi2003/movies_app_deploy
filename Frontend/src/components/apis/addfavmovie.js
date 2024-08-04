@@ -6,7 +6,7 @@ const addToFavorites = async (movie) => {
     const userId=localStorage.getItem('userId')
 
     try {
-        const response = await fetch('http://localhost:5000/api/favorites', {
+        const response = await fetch('https://movies-app-api.vercel.app/api/favorites', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ const addToFavorites = async (movie) => {
     }
 };
 function login(){
-    fetch('http://localhost:5000/api/login', {
+    fetch('https://movies-app-api.vercel.app/api/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -52,7 +52,7 @@ const removeFromFavorites = async (movie) => {
     const token = localStorage.getItem('token');
 
     try {
-        const response = await fetch('http://localhost:5000/api/favorites', {
+        const response = await fetch('https://movies-app-api.vercel.app/api/favorites', {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
