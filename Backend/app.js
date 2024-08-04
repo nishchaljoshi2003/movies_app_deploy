@@ -11,9 +11,8 @@ const app = express();
 const port = process.env.PORT;
 
 const allowedOrigins = [
-  'https://movies-app-deploy-lovat.vercel.app/',
-  'https://movies-app-api.vercel.app/',
-  'http://localhost:3000'
+  'https://movies-app-deploy-lovat.vercel.app',
+  'https://movies-app-api.vercel.app/'
 ];
 
 app.use(cors({
