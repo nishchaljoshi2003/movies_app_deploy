@@ -26,7 +26,7 @@ const Profile = () => {
         const token = localStorage.getItem('token');
         try {
             setLoading(true);
-            const response = await fetch('http://localhost:5000/api/favorites', {
+            const response = await fetch('https://movies-app-api.vercel.app/api/favorites', {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
