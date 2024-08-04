@@ -88,7 +88,7 @@ const SignUp = () => {
     e.preventDefault();
     if (validate()) {
       try {
-        const response = await axios.post('http://localhost:5000/api/register', {
+        const response = await axios.post('https://movies-app-api.vercel.app/api/register', {
           email: formData.email,
           password: formData.password,
           age: formData.age,
