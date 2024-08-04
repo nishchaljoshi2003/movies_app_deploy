@@ -10,8 +10,20 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT;
 
+const allowedOrigins = [
+  'https://movies-app-deploy-lovat.vercel.app/',
+  'https://movies-app-api.vercel.app/',
+  'http://localhost:3000'
+];
+
 app.use(cors({
-    origin: 'https://movies-app-api.vercel.app/',
+    origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
     allowedHeaders: '*',
   }));
