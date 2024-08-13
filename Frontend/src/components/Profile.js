@@ -31,20 +31,21 @@ const Profile = () => {
                     'Authorization': `Bearer ${token}`
                 }
             });
-
+    
             if (!response.ok) {
                 throw new Error('Failed to fetch favorites');
             }
-
+    
             const data = await response.json();
+            console.log('Favorites fetched:', data); // Add this log
             setFavorites(data);
             setLoading(false);
         } catch (error) {
             console.error('Error fetching favorites:', error);
             setLoading(false);
-            // Handle error state or display error message
         }
     }
+
 
     async function fetchData() {
         try {
