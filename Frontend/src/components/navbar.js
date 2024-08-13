@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom"
 
 
 function Navbar() {
+  const [searchQuery, setSearchQuery] = useState('');
   const token = localStorage.getItem('token');
 
   // console.log(token);
@@ -18,6 +19,12 @@ function Navbar() {
   const handleClick=(path)=>{
     navigate(path);
   }
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      navigate(`/search?query=${searchQuery}`);
+    }
+  };
   return (
     <div className='dom'>
       <div className='navbar'>
@@ -48,9 +55,16 @@ function Navbar() {
         }}></FontAwesomeIcon>
         <h1 className='heading'>M</h1><div className='head'>ovies App</div>
         <div className='wrapper'>
-          <div className="container">
-            <input type="text" placeholder="Search..." className='input1'/>
-            <div className="search"></div>
+        <div className="container">
+            <form onSubmit={handleSearch}>
+              <input
+                type="text"
+                placeholder="Search..."
+                className='input1'
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </form>
           </div>
         </div>
         <div className='favorites' title='favorites'><FontAwesomeIcon icon={faStar} className='fa-2xl' onClick={()=>handleClick(token?'/favorites':'/signin')}/></div>
