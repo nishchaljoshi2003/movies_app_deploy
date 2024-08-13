@@ -71,6 +71,7 @@ const Profile = () => {
 
     // Filter allMovies to get only favorite movies
     const favoriteMovies = allMovies.filter(movie => favorites.some(fav => fav.movie_id === movie.id));
+    console.log(favoriteMovies);
 
     const handleLogout = () => {
         localStorage.removeItem('token');
