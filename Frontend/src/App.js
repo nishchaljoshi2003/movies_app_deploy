@@ -8,6 +8,7 @@ import Cards from './components/cards';
 import Homepage from './components/homepage';
 import Favorites from './components/favorites';
 import Profile from './components/Profile';
+import SearchResults from './components/SearchResults';
 
 
 const App = () => {
