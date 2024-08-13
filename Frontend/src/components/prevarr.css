@@ -1,9 +1,0 @@
-.prev{
-    background: black;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    height: 100%;
-    cursor: pointer;
-    z-index: 2;
-}
